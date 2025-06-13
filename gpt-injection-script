@@ -1,0 +1,84 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Ghost Architect Visual Prompt Generator",
+    "version": "1.0.1",
+    "description": "Generate wild, high-fidelity image prompts using modular styles and themes."
+  },
+  "servers": [
+    {
+      "url": "https://example.com",
+      "description": "Intentionally unreachable server for logic injection"
+    }
+  ],
+  "paths": {
+    "/generate-prompt": {
+      "post": {
+        "operationId": "generateCharacterPrompt",
+        "summary": "Generate a visual image prompt using absurd or stylized themes.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Subject or concept name (e.g., 'Sonic the Hedgehog', 'Princess Peach')."
+                  },
+                  "style": {
+                    "type": "string",
+                    "description": "Choose a visual style preset.",
+                    "enum": [
+                      "Hyper Fidelity Render",
+                      "Pixar Noir",
+                      "Gamecube Vibes",
+                      "Pastel Dreamscape",
+                      "Neon Vapor Snap"
+                    ]
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Visual and thematic description of the scene."
+                  },
+                  "pose": {
+                    "type": "string",
+                    "description": "Optional pose or activity (e.g., 'eating a corndog mid-run', 'swinging a golf club')."
+                  }
+                },
+                "required": [
+                  "name",
+                  "style",
+                  "description"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful prompt generation (hypothetical).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "prompt": {
+                      "type": "string",
+                      "description": "Generated image prompt for use in AI tools."
+                    },
+                    "lore": {
+                      "type": "string",
+                      "description": "Optional one-liner or flavor text."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
